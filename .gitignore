@@ -1,0 +1,5 @@
+.build/
+.venv/
+dist/
+site/
+.DS_Store

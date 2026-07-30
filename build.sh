@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$(dirname "$0")"
+
+name="Igor Makarov - CV"
+rm -rf .build dist site
+mkdir -p .build/cache dist site
+export XDG_CACHE_HOME="$PWD/.build/cache"
+reference_docx=".build/reference.docx"
+python scripts/build_reference.py reference "$reference_docx"
+if [[ -n "${WEASYPRINT_DYLD_FALLBACK_LIBRARY_PATH+x}" ]]; then
+  export DYLD_FALLBACK_LIBRARY_PATH="$WEASYPRINT_DYLD_FALLBACK_LIBRARY_PATH"
+fi
+
+pandoc cv.md \
+  --from=markdown \
+  --to=html5 \
+  --standalone \
+  --lua-filter=filters/cv.lua \
+  --css=style.css \
+  --metadata=pagetitle:"Igor Makarov — Staff Engineer" \
+  --output=site/index.html
+cp style.css site/style.css
+cp -R fonts site/fonts
+
+weasyprint --quiet site/index.html "dist/$name.pdf"
+
+pandoc cv.md \
+  --from=markdown \
+  --to=docx \
+  --standalone \
+  --lua-filter=filters/cv.lua \
+  --reference-doc="$reference_docx" \
+  --output="dist/$name.docx"
+
+python scripts/verify.py "dist/$name.pdf" "dist/$name.docx" site/index.html
+printf 'Built:\n  site/index.html\n  dist/%s.pdf\n  dist/%s.docx\n' "$name" "$name"

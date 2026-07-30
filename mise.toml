@@ -1,0 +1,12 @@
+[tools]
+python = "3.14"
+pandoc = "3.9"
+"pipx:weasyprint" = "69.0"
+
+[tasks.build]
+description = "Build the website, one-page A4 PDF, and DOCX"
+run = "./build.sh"
+
+[tasks.clean]
+description = "Remove generated files"
+run = "rm -rf .build dist site"

@@ -1,0 +1,295 @@
+@font-face {
+  font-family: "CV Carlito";
+  src: url("fonts/Carlito-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CV Carlito";
+  src: url("fonts/Carlito-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CV Carlito";
+  src: url("fonts/Carlito-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CV Caladea";
+  src: url("fonts/Caladea-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CV Caladea";
+  src: url("fonts/Caladea-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --ink: #18212b;
+  --accent: #7b2430;
+  --rule: #b63a49;
+  --paper: #ffffff;
+  --page-width: 54.116rem; /* 210mm */
+  --page-padding-x: 6.4424rem; /* 25mm */
+  --page-padding-top: 4rem;
+  --page-padding-bottom: 5.1539rem; /* 20mm */
+  --date-width: 6.4424rem; /* 25mm */
+  font-family: "CV Carlito", sans-serif;
+  font-size: 16pt;
+  line-height: normal;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: min(var(--page-width), 100%);
+  line-height: 1.3;
+  margin: 0 auto;
+  padding: var(--page-padding-top) var(--page-padding-x) var(--page-padding-bottom);
+  background: var(--paper);
+}
+
+a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, var(--accent), transparent 55%);
+  text-underline-offset: 0.12em;
+}
+
+.hero {
+  margin: 0;
+}
+
+.hero h1 {
+  margin: 0;
+  font-family: "CV Caladea", serif;
+  padding: 0 0 0.3865rem; /* 1.5mm bottom */
+  border-bottom: 0.0545rem solid var(--rule);
+  color: var(--accent);
+  font-size: 2.5455rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hero .title-track-n24 {
+  letter-spacing: -0.1091rem;
+}
+
+.hero .title-track-n30 {
+  letter-spacing: -0.1364rem;
+}
+
+.hero .title-track-n20 {
+  letter-spacing: -0.0909rem;
+}
+
+.hero .title-track-n8 {
+  letter-spacing: -0.0364rem;
+}
+
+.hero .title-track-p4 {
+  letter-spacing: 0.0182rem;
+}
+
+.hero .title-track-n14 {
+  letter-spacing: -0.0636rem;
+}
+
+.hero .title-track-n10 {
+  letter-spacing: -0.0455rem;
+}
+
+.hero .role {
+  display: inline-block;
+  margin-left: 0.55em;
+  color: #946d42;
+  font-family: "CV Caladea", serif;
+  font-size: 1.0909rem;
+  font-weight: 700;
+  letter-spacing: 0.1818rem;
+  transform: scaleX(1.1);
+  transform-origin: left center;
+  white-space: nowrap;
+}
+
+.hero .contact {
+  margin: 0.3608rem 0 0; /* 1.4mm top */
+  color: var(--ink);
+  font-size: 0.8909rem;
+  line-height: 1;
+}
+
+.hero .contact strong {
+  color: var(--accent);
+}
+
+.hero .contact a,
+.hero .contact a:visited {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+h2 {
+  margin: 1.0823rem 0 0.5669rem; /* 4.2mm top, 2.2mm bottom */
+  color: var(--accent);
+  font-size: 1.2727rem;
+  font-kerning: normal;
+  font-weight: 700;
+  line-height: 1;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0 0 0 1.2885rem; /* 5mm left */
+  padding: 0;
+  list-style-type: square;
+}
+
+li {
+  margin: 0;
+  padding-left: 0.4639rem; /* 1.8mm */
+}
+
+.experience,
+.credential {
+  break-inside: avoid;
+}
+
+.experience h3,
+.credential h3 {
+  display: flex;
+  align-items: baseline;
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.experience .dates,
+.credential .dates {
+  flex: 0 0 var(--date-width);
+  color: var(--ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.experience .details,
+.credential .details {
+  flex: 1 1 auto;
+}
+
+.experience strong {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.experience em {
+  color: var(--ink);
+}
+
+.experience p {
+  margin-left: var(--date-width);
+  text-align: left;
+}
+
+
+@media screen and (max-width: 720px) {
+  :root {
+    --page-padding-x: 7vw;
+  }
+
+  .hero h1 {
+    padding-bottom: 0;
+    border-bottom: 0;
+    font-size: clamp(2.1818rem, 10vw, 2.5455rem);
+  }
+
+  .hero .role {
+    display: block;
+    margin: 0.3865rem 0 0; /* 1.5mm top */
+  }
+
+  .hero .contact {
+    margin-top: 1.0823rem; /* 4.2mm, matching h2 spacing */
+    line-height: 1;
+  }
+
+  .hero .contact-item {
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .hero .contact-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .hero .contact-separator {
+    display: none;
+  }
+
+  .experience h3,
+  .credential h3 {
+    display: block;
+  }
+
+  .experience .dates,
+  .credential .dates {
+    display: block;
+    margin-bottom: 0.0773rem; /* 0.3mm */
+  }
+
+  .experience p {
+    margin-left: 0;
+  }
+}
+
+@page {
+  size: A4;
+  margin: 27.5mm 25mm 20mm;
+}
+
+@media print {
+  :root {
+    font-size: 11pt;
+    background: var(--paper);
+  }
+
+  body {
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1lh;
+    box-shadow: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,3 @@
+[bootstrap.packages]
+"apt:libpango-1.0-0" = "latest"
+"apt:libpangoft2-1.0-0" = "latest"
