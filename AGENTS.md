@@ -36,4 +36,4 @@ Keep the source millimetre value in an inline CSS comment next to every `rem` va
 
 ## GitHub Actions
 
-The workflow installs Pandoc, Python, and WeasyPrint 69.0 with mise. `mise.linux.toml` declares Ubuntu’s native Pango libraries, which mise bootstrap packages install into standard loader paths. The workflow then builds all formats, deploys the website to GitHub Pages, and replaces the `cv-latest` release assets.
+The workflow installs Pandoc, Python, and WeasyPrint 69.0 with mise. `mise.linux.toml` declares Ubuntu’s native Pango libraries, which mise bootstrap packages install into standard loader paths. The workflow then builds all formats and deploys the website to GitHub Pages.

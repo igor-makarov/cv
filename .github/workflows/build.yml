@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -45,10 +45,3 @@ jobs:
       - name: Deploy website
         id: deployment
         uses: actions/deploy-pages@v4
-
-      - name: Replace latest release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release delete cv-latest --cleanup-tag --yes || true
-          gh release create cv-latest dist/* --target "$GITHUB_SHA" --title "CV — latest" --notes "Latest generated CV outputs."
