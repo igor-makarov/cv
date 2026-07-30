@@ -7,9 +7,8 @@ on:
 
 permissions:
   contents: write
-  # GitHub Pages publishing is intentionally disabled for now.
-  # pages: write
-  # id-token: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: cv-build
@@ -18,9 +17,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # environment:
-    #   name: github-pages
-    #   url: ${{ steps.deployment.outputs.page_url }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Check out repository
@@ -43,10 +42,9 @@ jobs:
         with:
           path: site
 
-      # GitHub Pages publishing is intentionally disabled for now.
-      # - name: Deploy website
-      #   id: deployment
-      #   uses: actions/deploy-pages@v4
+      - name: Deploy website
+        id: deployment
+        uses: actions/deploy-pages@v4
 
       - name: Replace latest release
         env:
