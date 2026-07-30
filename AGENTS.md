@@ -17,7 +17,7 @@ mise install
 mise run build
 ```
 
-Mise supplies Pandoc, Python, and WeasyPrint 69.0 through its `pipx:` backend. `mise.macos.toml` supplies the Homebrew dynamic-library path on macOS. The build writes the website to `site/`, writes the generated reference DOCX to `.build/`, writes the final DOCX/PDF files to `dist/`, and fails unless the PDF is exactly one A4 page and the DOCX declares A4 page dimensions.
+Mise supplies Pandoc, Python, and WeasyPrint 69.0 through its `pipx:` backend. `mise.macos.toml` supplies the Homebrew dynamic-library path on macOS. The build writes the website to `site/`, including auto-download routes at `site/pdf/` and `site/docx/` with full-name copies of both documents. It writes the generated reference DOCX to `.build/`, writes the final DOCX/PDF files to `dist/`, and fails unless the PDF is exactly one A4 page and the DOCX declares A4 page dimensions.
 
 After DOCX layout or reference-style changes, render the generated DOCX through Microsoft Word and confirm it is one page. Preserve the 11 pt body font and the 2.75 cm/2 cm top/bottom margins; recover space through paragraph or line spacing instead of shrinking text or margins.
 

@@ -34,5 +34,7 @@ pandoc cv.md \
   --reference-doc="$reference_docx" \
   --output="dist/$name.docx"
 
+python scripts/build_download_pages.py site "dist/$name.pdf" "dist/$name.docx"
 python scripts/verify.py "dist/$name.pdf" "dist/$name.docx" site/index.html
-printf 'Built:\n  site/index.html\n  dist/%s.pdf\n  dist/%s.docx\n' "$name" "$name"
+printf 'Built:\n  site/index.html\n  site/pdf/index.html\n  site/docx/index.html\n  site/%s.pdf\n  site/%s.docx\n  dist/%s.pdf\n  dist/%s.docx\n' \
+  "$name" "$name" "$name" "$name"
