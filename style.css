@@ -260,10 +260,14 @@ li {
     display: block;
   }
 
-  .experience .dates,
-  .credential .dates {
-    display: block;
-    margin-bottom: 0.0773rem; /* 0.3mm */
+  .experience .details::before,
+  .credential .details::before {
+    content: " · ";
+  }
+
+  .experience + .experience,
+  .credential + .credential {
+    margin-top: 0.5669rem; /* 2.2mm at the print root size */
   }
 
   .experience p {
