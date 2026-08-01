@@ -4,8 +4,8 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 name="Igor Makarov - CV"
-rm -rf .build dist site
-mkdir -p .build/cache dist site
+rm -rf .build site
+mkdir -p .build/cache site
 export XDG_CACHE_HOME="$PWD/.build/cache"
 reference_docx=".build/reference.docx"
 python scripts/build_reference.py reference "$reference_docx"
@@ -24,7 +24,7 @@ pandoc cv.md \
 cp style.css site/style.css
 cp -R fonts site/fonts
 
-weasyprint --quiet site/index.html "dist/$name.pdf"
+weasyprint --quiet site/index.html "site/$name.pdf"
 
 pandoc cv.md \
   --from=markdown \
@@ -32,9 +32,9 @@ pandoc cv.md \
   --standalone \
   --lua-filter=filters/cv.lua \
   --reference-doc="$reference_docx" \
-  --output="dist/$name.docx"
+  --output="site/$name.docx"
 
-python scripts/build_download_pages.py site "dist/$name.pdf" "dist/$name.docx"
-python scripts/verify.py "dist/$name.pdf" "dist/$name.docx" site/index.html
-printf 'Built:\n  site/index.html\n  site/pdf/index.html\n  site/docx/index.html\n  site/%s.pdf\n  site/%s.docx\n  dist/%s.pdf\n  dist/%s.docx\n' \
-  "$name" "$name" "$name" "$name"
+python scripts/build_download_pages.py site "site/$name.pdf" "site/$name.docx"
+python scripts/verify.py "site/$name.pdf" "site/$name.docx" site/index.html
+printf 'Built:\n  site/index.html\n  site/pdf/index.html\n  site/docx/index.html\n  site/%s.pdf\n  site/%s.docx\n' \
+  "$name" "$name"

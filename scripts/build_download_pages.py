@@ -16,7 +16,8 @@ for source in source_files:
     destination = site_dir / filename
     page_dir = site_dir / route
     page_dir.mkdir(parents=True, exist_ok=True)
-    shutil.copyfile(source, destination)
+    if source.resolve() != destination.resolve():
+        shutil.copyfile(source, destination)
 
     label = route.upper()
     href = "../" + quote(filename)
