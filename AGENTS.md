@@ -9,15 +9,15 @@
 
 ## Build
 
-Install [mise](https://mise.jdx.dev/) and the native Pango library on macOS, then build:
+Install [mise](https://mise.jdx.dev/), bootstrap the native Pango libraries, and build:
 
 ```sh
-brew install pango
+mise bootstrap packages install --manager brew
 mise install
 mise run build
 ```
 
-Mise supplies Pandoc, Python, and WeasyPrint 69.0 through its `pipx:` backend. `mise.macos.toml` supplies the Homebrew dynamic-library path on macOS. The build writes the website and final DOCX/PDF files to `site/`, including auto-download routes at `site/pdf/` and `site/docx/`. It writes the generated reference DOCX to `.build/` and fails unless the PDF is exactly one A4 page and the DOCX declares A4 page dimensions.
+Mise supplies Pandoc, Python, and WeasyPrint 69.0 through its `pipx:` backend. `mise.lock` pins tool artifacts for macOS arm64 and Linux x64; regenerate it for both platforms with `mise lock --platform macos-arm64,linux-x64`. `mise.toml` declares the platform-native Pango packages and supplies the Homebrew dynamic-library path on macOS. The build writes the website and final DOCX/PDF files to `site/`, including auto-download routes at `site/pdf/` and `site/docx/`. It writes the generated reference DOCX to `.build/` and fails unless the PDF is exactly one A4 page and the DOCX declares A4 page dimensions.
 
 After DOCX layout or reference-style changes, render the generated DOCX through Microsoft Word and confirm it is one page. Preserve the 11 pt body font and the 2.75 cm/2 cm top/bottom margins; recover space through paragraph or line spacing instead of shrinking text or margins.
 
@@ -36,4 +36,4 @@ Keep the source millimetre value in an inline CSS comment next to every `rem` va
 
 ## GitHub Actions
 
-The workflow installs Pandoc, Python, and WeasyPrint 69.0 with mise. `mise.linux.toml` declares Ubuntu’s native Pango libraries, which mise bootstrap packages install into standard loader paths. The workflow then builds all formats and deploys the website to GitHub Pages.
+The workflow installs Pandoc, Python, and WeasyPrint 69.0 with mise. It bootstraps the Ubuntu Pango packages declared in `mise.toml`, builds all formats, and deploys the website to GitHub Pages.

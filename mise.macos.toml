@@ -1,2 +1,0 @@
-[env]
-WEASYPRINT_DYLD_FALLBACK_LIBRARY_PATH = "/opt/homebrew/lib"

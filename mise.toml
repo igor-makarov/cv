@@ -1,7 +1,19 @@
+[settings]
+lockfile = true
+lockfile_platforms = ["macos-arm64", "linux-x64"]
+
 [tools]
-python = "3.14"
-pandoc = "3.9"
-"pipx:weasyprint" = "69.0"
+python = "latest"
+pandoc = "latest"
+"pipx:weasyprint" = "latest"
+
+[env]
+WEASYPRINT_DYLD_FALLBACK_LIBRARY_PATH = "/opt/homebrew/lib"
+
+[bootstrap.packages]
+"apt:libpango-1.0-0" = "latest"
+"apt:libpangoft2-1.0-0" = "latest"
+"brew:pango" = "latest"
 
 [tasks.build]
 description = "Build the website, one-page A4 PDF, and DOCX"
@@ -9,4 +21,4 @@ run = "./build.sh"
 
 [tasks.clean]
 description = "Remove generated files"
-run = "rm -rf .build dist site"
+run = "rm -rf .build site"
