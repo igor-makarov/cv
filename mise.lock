@@ -14,10 +14,6 @@ checksum = "sha256:7d56ac6fe6fad0a7407bcd776aa142f61ca41838f286165f79d0584fa57b2
 url = "https://github.com/jgm/pandoc/releases/download/3.9/pandoc-3.9-arm64-macOS.zip"
 url_api = "https://api.github.com/repos/jgm/pandoc/releases/assets/350472393"
 
-[[tools."pipx:weasyprint"]]
-version = "69.0"
-backend = "pipx:weasyprint"
-
 [[tools.python]]
 version = "3.14.3"
 backend = "core:python"
@@ -31,3 +27,7 @@ provenance = "github-attestations"
 checksum = "sha256:c43aecde4a663aebff99b9b83da0efec506479f1c3f98331442f33d2c43501f9"
 url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260324/cpython-3.14.3+20260324-aarch64-apple-darwin-install_only_stripped.tar.gz"
 provenance = "github-attestations"
+
+[[tools.weasyprint]]
+version = "69.0"
+backend = "pipx:weasyprint"

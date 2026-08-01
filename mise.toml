@@ -2,10 +2,13 @@
 lockfile = true
 lockfile_platforms = ["macos-arm64", "linux-x64"]
 
+[tool_alias]
+weasyprint = "pipx:weasyprint"
+
 [tools]
 python = "latest"
 pandoc = "latest"
-"pipx:weasyprint" = "latest"
+weasyprint = "latest"
 
 [env]
 WEASYPRINT_DYLD_FALLBACK_LIBRARY_PATH = "/opt/homebrew/lib"
