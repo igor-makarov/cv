@@ -25,7 +25,7 @@ Generated directories (`.build/`, `dist/`, and `site/`) stay git-ignored.
 
 ## CSS unit conversion
 
-The shared layout uses `rem` values derived from physical print measurements so the 16 pt website can scale proportionally from the 11 pt PDF and retain similar line wrapping. At the print root size, `1rem = 11pt = 11 × 25.4 ÷ 72 = 3.8806mm`. Convert millimetres with:
+The shared layout uses `rem` values derived from physical print measurements so the 16 pt desktop website can scale proportionally from the 11 pt PDF and retain similar line wrapping. Mobile overrides the root to `106.25%` (17 px at the standard browser default). At the print root size, `1rem = 11pt = 11 × 25.4 ÷ 72 = 3.8806mm`. Convert millimetres with:
 
 ```text
 rem = mm ÷ (11 × 25.4 ÷ 72)

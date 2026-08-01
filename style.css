@@ -222,6 +222,8 @@ li {
 @media screen and (max-width: 720px) {
   :root {
     --page-padding-x: 7vw;
+    --page-padding-top: 3rem;
+    font-size: 106.25%;
   }
 
   .hero h1 {
