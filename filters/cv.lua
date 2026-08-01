@@ -118,6 +118,9 @@ local function html_document(doc)
     Link = function(link)
       link.attributes.target = "_blank"
       link.attributes.rel = "noopener noreferrer"
+      if link.target:match("^https?://") then
+        link.classes:insert("external-link")
+      end
       return link
     end,
   })

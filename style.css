@@ -219,7 +219,7 @@ li {
 }
 
 @media screen {
-  .hero .contact a[href*="github.com"]::after {
+  .hero .contact .external-link::after {
     display: inline-block;
     width: 0.6682rem;
     height: 0.6682rem;
