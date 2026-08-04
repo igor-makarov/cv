@@ -142,6 +142,7 @@ local function html_document(doc)
       local dates, details = split_heading(block.content)
       local heading = pandoc.Header(3, {
         pandoc.Span(dates, pandoc.Attr("", {"dates"})),
+        pandoc.Space(),
         pandoc.Span(details, pandoc.Attr("", {"details"})),
       })
       local grouped = {heading}
