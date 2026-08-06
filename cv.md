@@ -10,7 +10,7 @@
 - Obsessed with making the lives of fellow developers easier.
 - 20+ years of experience building software.
 - 12 years of experience developing iOS applications using Objective-C & Swift.
-- Experience with numerous technologies: TypeScript, React, Rust, Kotlin, C++, to name a few.
+- Experience with: TypeScript, React, Node.js, Rust, Kotlin, C++, to name a few.
 
 ## Work experience
 
@@ -22,7 +22,7 @@ From June 2025, led the rapid adoption of AI tools in the iOS team by writing ru
 
 ### 2014–2023 — **Senior software engineer** *at Moovit Ltd.*
 
-Worked on the next generation of Moovit’s iOS app. Adopted new technologies: CocoaPods, Fastlane, Node.js. Built a CI system for iOS app testing & deployment. Led the team’s Swift conversion effort. Achieved measurable cost savings by reforming the way clients used the CDN. Reduced build times for the main app project. Unlocked the production of white-label apps by overhauling the build system.
+Worked on the next generation of Moovit’s iOS app. Adopted new technologies: CocoaPods, Fastlane, Node.js. Built a CI system for iOS app testing & deployment. Worked on CocoaPods, an open-source project, and led development of its CDN. Led the team’s Swift conversion effort. Achieved measurable cost savings by optimizing CDN. Reduced build times for the main app project. Unlocked the production of white-label apps by overhauling the build system.
 
 ### 2013–2014 — **Senior software engineer** *at Citi Innovation Lab Tlv*
 
