@@ -16,7 +16,7 @@
 
 ### 2023–2026 — **Staff software engineer (iOS architect / tech lead)** *at Moovit Ltd.*
 
-Led the architectural design of the iOS app, enabling developers to build consumer-facing app features. Defined major implementation tasks for other engineers.
+Led the architectural design of the iOS app, enabling developers to build consumer-facing app features. Defined major implementation tasks for other engineers. Mentored engineers across the team, helping them learn and grow professionally.
 
 From June 2025, led the rapid adoption of AI tools in the iOS team by writing rules, prompts and skills, and performing other context-engineering tasks such as designing token-saving scripts and integrating MCPs. Leveraged AI to single-handedly migrate the entire project from CocoaPods to SPM, overhauling 80+ internal modules.
 
@@ -32,9 +32,9 @@ Designed and built a WPF/C#-based desktop application for trading US municipal s
 
 Designed and developed a WPF/C#-based Windows app for Soluto’s user agent. Built Soluto’s Windows Metro (pre-release Windows 8) app. Developed the backend on Microsoft Azure.
 
-### 2005–2011 — **Researcher & software engineer** *at IDF, Intelligence Corps*
+### 2005–2011 — **Researcher & software engineer** *at the IDF Mapping Unit, Intelligence Corps*
 
-Designed and developed a WPF/C#-based application for planning automated GIS quality control processes for use by the IDF Mapping Unit. Developed photogrammetric software for use by the IDF Mapping Unit. Designed photogrammetric models and conducted algorithmic research. Optimized C++ code.
+Designed and developed a WPF/C#-based application for planning automated GIS quality control processes. Developed photogrammetric software. Designed photogrammetric models and conducted algorithmic research. Optimized C++ code.
 
 ## Professional courses
 
