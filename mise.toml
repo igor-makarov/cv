@@ -3,20 +3,15 @@ lockfile = true
 lockfile_platforms = ["macos-arm64", "linux-x64"]
 
 [tool_alias]
-weasyprint = "pipx:weasyprint"
+weasyprint = "trans-nix:weasyprint[package='python314Packages.weasyprint']"
 
 [tools]
 python = "latest"
 pandoc = "latest"
 weasyprint = "latest"
 
-[env]
-WEASYPRINT_DYLD_FALLBACK_LIBRARY_PATH = "/opt/homebrew/lib"
-
-[bootstrap.packages]
-"apt:libpango-1.0-0" = "latest"
-"apt:libpangoft2-1.0-0" = "latest"
-"brew:pango" = "latest"
+[plugins]
+trans-nix = "https://github.com/igor-makarov/trans-nix#1.1.0"
 
 [tasks.build]
 description = "Build the website, one-page A4 PDF, and DOCX"

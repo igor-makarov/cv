@@ -9,10 +9,6 @@ mkdir -p .build/cache site
 export XDG_CACHE_HOME="$PWD/.build/cache"
 reference_docx=".build/reference.docx"
 python scripts/build_reference.py reference "$reference_docx"
-if [[ -n "${WEASYPRINT_DYLD_FALLBACK_LIBRARY_PATH+x}" ]]; then
-  export DYLD_FALLBACK_LIBRARY_PATH="$WEASYPRINT_DYLD_FALLBACK_LIBRARY_PATH"
-fi
-
 pandoc cv.md \
   --from=markdown \
   --to=html5 \

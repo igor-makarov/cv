@@ -31,9 +31,6 @@ jobs:
           install: true
           cache: true
 
-      - name: Install native WeasyPrint libraries with mise
-        run: mise bootstrap packages install --yes --update --manager apt
-
       - name: Build and verify all formats
         run: mise run build
 

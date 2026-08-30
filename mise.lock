@@ -33,4 +33,4 @@ provenance = "github-attestations"
 
 [[tools.weasyprint]]
 version = "69.0"
-backend = "pipx:weasyprint"
+backend = "trans-nix:weasyprint[package='python314Packages.weasyprint']"
