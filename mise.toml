@@ -1,6 +1,6 @@
 [settings]
 lockfile = true
-lockfile_platforms = ["macos-arm64", "linux-x64"]
+lockfile_platforms = ["macos-arm64", "linux-arm64"]
 
 [tool_alias]
 weasyprint = "trans-nix:weasyprint[nix-package='python314Packages.weasyprint']"

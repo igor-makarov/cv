@@ -17,7 +17,7 @@ mise install
 mise run build
 ```
 
-Mise supplies Pandoc, Python, and WeasyPrint 69.0 through its `pipx:` backend. `mise.lock` pins tool artifacts for macOS arm64 and Linux x64; regenerate it for both platforms with `mise lock --platform macos-arm64,linux-x64`. `mise.toml` declares the platform-native Pango packages and supplies the Homebrew dynamic-library path on macOS. The build writes the website and final DOCX/PDF files to `site/`, including auto-download routes at `site/pdf/` and `site/docx/`. It writes the generated reference DOCX to `.build/` and fails unless the PDF is exactly one A4 page and the DOCX declares A4 page dimensions.
+Mise supplies Pandoc, Python, and WeasyPrint 69.0 through its `pipx:` backend. `mise.lock` pins tool artifacts for macOS arm64 and Linux arm64; regenerate it for both platforms with `mise lock --platform macos-arm64,linux-arm64`. `mise.toml` declares the platform-native Pango packages and supplies the Homebrew dynamic-library path on macOS. The build writes the website and final DOCX/PDF files to `site/`, including auto-download routes at `site/pdf/` and `site/docx/`. It writes the generated reference DOCX to `.build/` and fails unless the PDF is exactly one A4 page and the DOCX declares A4 page dimensions.
 
 After DOCX layout or reference-style changes, render the generated DOCX through Microsoft Word and confirm it is one page. Preserve the 11 pt body font and the 2.75 cm/2 cm top/bottom margins; recover space through paragraph or line spacing instead of shrinking text or margins.
 
