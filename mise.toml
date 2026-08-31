@@ -3,7 +3,7 @@ lockfile = true
 lockfile_platforms = ["macos-arm64", "linux-x64"]
 
 [tool_alias]
-weasyprint = "trans-nix:weasyprint[package='python314Packages.weasyprint']"
+weasyprint = "trans-nix:weasyprint[nix-package='python314Packages.weasyprint']"
 
 [tools]
 python = "latest"
@@ -11,7 +11,7 @@ pandoc = "latest"
 weasyprint = "latest"
 
 [plugins]
-trans-nix = "https://github.com/igor-makarov/trans-nix#1.1.0"
+trans-nix = "https://github.com/igor-makarov/trans-nix#1.2.0"
 
 [tasks.build]
 description = "Build the website, one-page A4 PDF, and DOCX"
